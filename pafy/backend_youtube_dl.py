@@ -39,7 +39,7 @@ class YtdlPafy(BasePafy):
                 self._ydl_info = ydl.extract_info(self.videoid, download=False)
             # Turn into an IOError since that is what pafy previously raised
             except youtube_dl.utils.DownloadError as e:
-                raise IOError(str(e).replace('Test', 'Youtube says'))
+                raise IOError(str(e).replace('Youtube said', 'Test'))
 
         if self.callback:
             self.callback("Fetched video info")
